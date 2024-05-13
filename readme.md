@@ -1,10 +1,6 @@
 
 # Pasar de audio a texto con whisper
 
-
-
-
-
 ### Pasos para usar
 
 Instala las dependencias para correr el server
