@@ -1,5 +1,6 @@
 import whisper
 import modules.conexiones as c
+import pyttsx3
 
 db = "patitofeo"
 tabla = "ventas"
@@ -30,6 +31,14 @@ class Whisper:
             return {"message": str(e)}
 
 
+def convert_text_to_audio(text):
+    engine = pyttsx3.init()
+    filename = "output.mp3"
+    engine.save_to_file(text, filename)
+    engine.runAndWait()
+    return filename
+
+
 class Process:
     def __init__(self):
         self.queries = [
@@ -46,7 +55,7 @@ class Process:
                 f"""SELECT TOP 1 Cliente, COUNT(*) as Ventas
                 FROM {tabla}
                 GROUP BY Cliente
-                ORDER BY Ventas DESC""",
+                ORDER BY Ventas ASC""",
             ),
             (
                 ["producto", "mas", "vendido"],
