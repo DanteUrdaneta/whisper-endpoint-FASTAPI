@@ -1,59 +1,58 @@
 
-# Pasar de audio a texto con whisper
+# Convert Audio to Text with Whisper
 
-### Pasos para usar
-
+### Steps to use
 Instala las dependencias para correr el server
 
 ```bash
   pip install fastapi, uvicorn
 ```
 
-Instala la dependencia para correr el modelo WHISPER
+Install the dependency to run the WHISPER model
 
 ```bash
   pip install -U openai-whisper
 ```
 
-Instala el driver de audio ffmpeg
+Install the ffmpeg audio driver
 
-usa este comando si tienes linux o un subsistema (recomendable)
+Use this command if you have Linux or a subsystem (recommended)
 ```bash
   sudo apt update && sudo apt install ffmpeg
 ```
 
-O instalalo en windows utilizando chocolatey
+Or install it on Windows using Chocolatey
 
 ```bash
   choco install ffmpeg
 ```
 
-### corre el server usando
+### Run the server using
 ```bash
   uvicorn main:app --reload 
 ```
 
-## Como interactuar con el endpoint
+## How to interact with the Endpoint
 
-ve al siguiente link: http://localhost:8000/docs#
-(esto abrira una documentación interactuable para utilizar el endpoint)
+Go to the following link: http://localhost:8000/docs#
+(this will open an interactive documentation to use the endpoint)
 
-Te encontraras con las rutas, como solo tenemos una sera la ruta "/upload" unicamente
+You will find the routes; since we only have one, it will only be the "/upload" route.
 
 ![image](https://github.com/DanteUrdaneta/whisper-endpoint-FASTAPI/blob/main/utils/ss1.png?raw=true)
 
 
-Le das click y te desplegara una pequeña dashboard para interactuar con el endpoint, le damos al boton "try it out"
+Click on it, and a small dashboard will interact with the endpoint. Click the "try it out" button.
 
 ![image](https://github.com/DanteUrdaneta/whisper-endpoint-FASTAPI/assets/137725460/d8b23a44-2a42-46a2-b136-415a93966d70)
 
 
-Luego, le daremos al boton que dice "choose file", escojemos el archivo de audio que queramos, y le damos a "Execute" para procesarlo
+Then, click the "Choose file" button, select the audio file you want, and click "Execute" to process it.
 
 ![image](https://github.com/DanteUrdaneta/whisper-endpoint-FASTAPI/blob/main/utils/ss3.png?raw=true)
 
 
-Finalmente, nos retornara una respuesta donde tendremos el texto procesado.
+Finally, you will receive a response with the processed text.
 
 ![image](https://github.com/DanteUrdaneta/whisper-endpoint-FASTAPI/blob/main/utils/ss4.png?raw=true)
 
